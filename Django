@@ -1,0 +1,32 @@
+data_to_get = {
+        "id": 1,
+        "name": "Test",
+};    
+
+function get_conta_receita(data_to_get = {}) {
+    var myData =  {
+        "id": data_to_get[\'id\'],
+        "name": data_to_get[\'name\'],
+    };        
+    const defaults = {
+        'method': 'GET',
+        'credentials': 'include',
+        'headers': new Headers({
+          'X-CSRFToken': csrf_token,
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest'
+        }),
+    };
+
+    url = montaURL(contas_receita_api, myData);
+
+    fetch(url, defaults)
+    .then(function(response) {
+        return response.json();      
+    }).then(function(data) {
+        console.log(data);
+    }).catch(function(ex) {
+        console.log("parsing failed", ex);
+    });
+};
