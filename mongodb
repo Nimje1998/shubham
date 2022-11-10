@@ -1,0 +1,114 @@
+mongo DBS
+
+
+
+> show dbs;
+admin       0.000GB
+config      0.000GB
+hm          0.000GB
+local       0.000GB
+movies      0.000GB
+silverCabs  0.000GB
+test        0.000GB
+> use silverCabs;
+switched to db silverCabs
+> show collections;
+Drivers
+Users
+> describe Drivers;
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:9
+> desc Drivers;
+uncaught exception: SyntaxError: unexpected token: identifier :
+@(shell):1:5
+> db.Drivers.find({});
+{ "_id" : ObjectId("62bbd6f54c7b39dc3c4567eb"), "savedAddress" : [ { "buildingNo" : 341, "area" : "JP- Nagar", "pincode" : 560065, "state" : "Karnataka", "city" : "Bengaluru" } ], "defaultAddress" : [ { "buildingNo" : 876, "area" : "Nagwara", "pincode" : 560066, "state" : "Karnataka", "city" : "Bengaluru" } ], "mobileNumber" : 9877654700, "email" : "driver@gmail.com", "name" : [ { "firstName" : "KantaRaj", "lastName" : "Reddy" } ], "rating" : 4, "ridesTaken" : [ { "source" : "Veeranapalaya", "destination" : "Mysore Arts and Digital", "rating" : 5, "user" : "kunta", "price" : 158 }, { "source" : "Mantri- Square", "destination" : "Manyta-Tek Park", "rating" : 4, "user" : "Raj", "price" : 300 } ], "photograph" : "C:/openDrive/repos/assests/images/search-icon.png" }
+> db.Drivers.find({}).pretty();
+{
+        "_id" : ObjectId("62bbd6f54c7b39dc3c4567eb"),
+        "savedAddress" : [
+                {
+                        "buildingNo" : 341,
+                        "area" : "JP- Nagar",
+                        "pincode" : 560065,
+                        "state" : "Karnataka",
+                        "city" : "Bengaluru"
+                }
+        ],
+        "defaultAddress" : [
+                {
+                        "buildingNo" : 876,
+                        "area" : "Nagwara",
+                        "pincode" : 560066,
+                        "state" : "Karnataka",
+                        "city" : "Bengaluru"
+                }
+        ],
+        "mobileNumber" : 9877654700,
+        "email" : "driver@gmail.com",
+        "name" : [
+                {
+                        "firstName" : "KantaRaj",
+                        "lastName" : "Reddy"
+                }
+        ],
+        "rating" : 4,
+        "ridesTaken" : [
+                {
+                        "source" : "Veeranapalaya",
+                        "destination" : "Mysore Arts and Digital",
+                        "rating" : 5,
+                        "user" : "kunta",
+                        "price" : 158
+                },
+                {
+                        "source" : "Mantri- Square",
+                        "destination" : "Manyta-Tek Park",
+                        "rating" : 4,
+                        "user" : "Raj",
+                        "price" : 300
+                }
+        ],
+        "photograph" : "C:/openDrive/repos/assests/images/search-icon.png"
+}
+> db.Users.find({}).pretty();
+{
+        "_id" : ObjectId("62bbd4914c7b39dc3c4567ea"),
+        "savedAddress" : [
+                {
+                        "buildingNo" : 123,
+                        "area" : "Nandini Layout",
+                        "pincode" : 560096,
+                        "state" : "Karnataka",
+                        "city" : "Bengaluru"
+                }
+        ],
+        "defaultAddress" : [
+                {
+                        "buildingNo" : 124,
+                        "area" : "Veeranapalaya",
+                        "pincode" : 560056,
+                        "state" : "Karnataka",
+                        "city" : "Bengaluru"
+                }
+        ],
+        "mobileNumber" : 9876543210,
+        "email" : "abc@gmail.com",
+        "name" : [
+                {
+                        "firstName" : "Kunta",
+                        "lastName" : "Paliwal"
+                }
+        ],
+        "rating" : 4,
+        "ridesTaken" : [
+                {
+                        "source" : "Veeranapalaya",
+                        "destination" : "Mysore Arts and Digital",
+                        "rating" : 5,
+                        "user" : "kunta",
+                        "price" : 158
+                }
+        ],
+        "photograph" : "C:/openDrive/repos/assests/images/search-icon.png"
+}
